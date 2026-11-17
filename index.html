@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Мои игры</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(1200px 600px at 50% -10%,#1d2760,#070b1a 60%);color:#e9ecf4;font-family:system-ui,sans-serif;padding:0 16px 40px}
+header{text-align:center;padding:34px 0 18px}
+h1{margin:0;font-size:32px}
+header p{margin:8px 0 0;color:#aab4d4}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;max-width:720px;margin:0 auto}
+a.card,.card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:170px;padding:16px 10px;border-radius:20px;text-decoration:none;color:inherit;text-align:center;border:1px solid rgba(255,255,255,.14);background:linear-gradient(160deg,var(--c1),var(--c2));box-shadow:0 8px 22px rgba(0,0,0,.35);transition:transform .12s}
+a.card:active{transform:scale(.96)}
+.ic{font-size:56px;line-height:1}
+.nm{font-size:18px;font-weight:700}
+.ds{font-size:13px;color:rgba(255,255,255,.78);line-height:1.3}
+.new{--c1:#232846;--c2:#1a1f38;border:2px dashed rgba(255,255,255,.3);box-shadow:none}
+.new .ic{opacity:.7}
+</style></head><body>
+<header><h1>🎮 Мои игры</h1><p>Выбери игру</p></header>
+<div class="grid" id="g"></div>
+<script>
+/* Чтобы добавить игру: допиши строку в список ниже.
+   href — имя файла игры, например 'star-courier.html' */
+const GAMES=[
+  {icon:'🚀',name:'Звёздный курьер',desc:'Лови звёзды и сбивай астероиды',href:'star-courier.html',c1:'#3b2fa0',c2:'#12183a'},
+];
+const g=document.getElementById('g');
+GAMES.forEach(x=>{const a=document.createElement('a');a.className='card';a.href=x.href;a.style.setProperty('--c1',x.c1);a.style.setProperty('--c2',x.c2);
+  a.innerHTML='<div class="ic">'+x.icon+'</div><div class="nm">'+x.name+'</div><div class="ds">'+x.desc+'</div>';g.appendChild(a)});
+const n=document.createElement('div');n.className='card new';n.innerHTML='<div class="ic">✨</div><div class="nm">Твоя игра</div><div class="ds">Скоро здесь будет то, что ты придумаешь</div>';g.appendChild(n);
+</script></body></html>
