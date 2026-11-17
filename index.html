@@ -25,6 +25,9 @@ a.card:active{transform:scale(.96)}
    href — имя файла игры, например 'star-courier.html' */
 const GAMES=[
   {icon:'🚀',name:'Звёздный курьер',desc:'Лови звёзды и сбивай астероиды',href:'star-courier.html',c1:'#3b2fa0',c2:'#12183a'},
+  {icon:'🪿',name:'Гусь-бегун',desc:'Прыгай, собирай хлеб и пугай собак',href:'goose-runner.html',c1:'#e8832a',c2:'#4aa3e0'},
+  {icon:'🎯',name:'Гусиная дуэль',desc:'Игра на двоих: кто метче запустит гуся',href:'goose-duel.html',c1:'#2f8a4a',c2:'#1a4d2b'},
+  {icon:'🏍️',name:'Мотокросс',desc:'5 дорожек, трамплины и препятствия',href:'moto-trail.html',c1:'#c2631f',c2:'#3a2a1c'},
 ];
 const g=document.getElementById('g');
 GAMES.forEach(x=>{const a=document.createElement('a');a.className='card';a.href=x.href;a.style.setProperty('--c1',x.c1);a.style.setProperty('--c2',x.c2);
